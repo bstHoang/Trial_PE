@@ -9,6 +9,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+
 namespace Project11
 {
     class Program
@@ -16,19 +17,26 @@ namespace Project11
         static async Task Main(string[] args)
         {
             var configuration = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-            .Build();
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .Build();
 
-            var connectionString = configuration.GetConnectionString("MovieStoreDB");
-            var port = configuration.GetSection("ServerConfig:Port").Value;
+            var connectionString = configuration["ConnectionStrings:MyCnn"];
+            var portStr = configuration["Port"];
+            var ipAddressStr = configuration["IpAddress"];
+
+            if (string.IsNullOrEmpty(connectionString) || string.IsNullOrEmpty(portStr) || string.IsNullOrEmpty(ipAddressStr)) // Updated check
+            {
+                Console.WriteLine("Error: Required configuration values are missing.");
+                return;
+            }
 
             var optionsBuilder = new DbContextOptionsBuilder<MovieStoreDbContext>();
             optionsBuilder.UseSqlServer(connectionString);
 
-            using var listener = new TcpListener(IPAddress.Any, int.Parse(port));
+            using var listener = new TcpListener(IPAddress.Parse(ipAddressStr), int.Parse(portStr)); // Updated to use the specific IP
             listener.Start();
-            Console.WriteLine($"Server started on port {port}");
+            Console.WriteLine($"Server started on {ipAddressStr}:{portStr}");
 
             while (true)
             {
@@ -57,8 +65,8 @@ namespace Project11
 
                     using var context = new MovieStoreDbContext(optionsBuilder.Options);
                     var movie = await context.Movies
-                    .Include(m => m.Director) // Eager load the Director
-                    .FirstOrDefaultAsync(m => m.MovieId == requestObj.MovieId);
+                        .Include(m => m.Director)
+                        .FirstOrDefaultAsync(m => m.MovieId == requestObj.MovieId);
 
                     Console.WriteLine($"Querying for MovieId: {requestObj.MovieId}, Result: {(movie != null ? movie.Title : "null")}");
 
@@ -76,7 +84,6 @@ namespace Project11
                         movie.AvailableCopies--;
                         await context.SaveChangesAsync();
 
-                        // *** FIX: Map the entity to a DTO before serializing ***
                         var movieDto = new MovieDto
                         {
                             MovieId = movie.MovieId,
@@ -84,7 +91,7 @@ namespace Project11
                             ReleaseYear = movie.ReleaseYear,
                             Genre = movie.Genre,
                             AvailableCopies = (int)movie.AvailableCopies,
-                            Director = movie.Director != null ? new DirectorDto // Check if Director exists
+                            Director = movie.Director != null ? new DirectorDto
                             {
                                 FirstName = movie.Director.FirstName,
                                 LastName = movie.Director.LastName
@@ -100,7 +107,6 @@ namespace Project11
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Error: {ex.Message}");
-                    // It's also good practice to inform the client of an internal error
                     var errorResponse = "An internal server error occurred.";
                     var errorBytes = Encoding.UTF8.GetBytes(errorResponse);
                     await stream.WriteAsync(errorBytes, 0, errorBytes.Length);

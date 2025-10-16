@@ -17,8 +17,9 @@ namespace Project12
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
-            var ipAddress = configuration.GetSection("ServerConfig:IpAddress").Value;
-            var port = int.Parse(configuration.GetSection("ServerConfig:Port").Value);
+            var portStr = configuration["Port"];
+            var ipAddress = configuration["IpAddress"];
+            int port = int.Parse(portStr);
         }
     }
 }
