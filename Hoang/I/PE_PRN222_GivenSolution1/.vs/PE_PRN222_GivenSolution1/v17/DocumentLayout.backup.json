@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3EFBF2E0-8F60-4FAE-B978-E93FEFD5F870}|Project11\\Project11.csproj|d:\\capstone project\\trial_pe\\hoang\\i\\pe_prn222_givensolution1\\project11\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EFBF2E0-8F60-4FAE-B978-E93FEFD5F870}|Project11\\Project11.csproj|solutionrelative:project11\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EFBF2E0-8F60-4FAE-B978-E93FEFD5F870}|Project11\\Project11.csproj|d:\\capstone project\\trial_pe\\hoang\\i\\pe_prn222_givensolution1\\project11\\models\\librarycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EFBF2E0-8F60-4FAE-B978-E93FEFD5F870}|Project11\\Project11.csproj|solutionrelative:project11\\models\\librarycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EFBF2E0-8F60-4FAE-B978-E93FEFD5F870}|Project11\\Project11.csproj|d:\\capstone project\\trial_pe\\hoang\\i\\pe_prn222_givensolution1\\project11\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3EFBF2E0-8F60-4FAE-B978-E93FEFD5F870}|Project11\\Project11.csproj|solutionrelative:project11\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{71D78A13-2AEB-4724-A939-B9769EDAC514}|Project12\\Project12.csproj|d:\\capstone project\\trial_pe\\hoang\\i\\pe_prn222_givensolution1\\project12\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71D78A13-2AEB-4724-A939-B9769EDAC514}|Project12\\Project12.csproj|solutionrelative:project12\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LibraryContext.cs",
-              "DocumentMoniker": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project11\\Models\\LibraryContext.cs",
-              "RelativeDocumentMoniker": "Project11\\Models\\LibraryContext.cs",
-              "ToolTip": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project11\\Models\\LibraryContext.cs",
-              "RelativeToolTip": "Project11\\Models\\LibraryContext.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowCYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T02:54:15.015Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project11\\appsettings.json",
-              "RelativeDocumentMoniker": "Project11\\appsettings.json",
-              "ToolTip": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project11\\appsettings.json",
-              "RelativeToolTip": "Project11\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-16T07:50:48.987Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project11\\Program.cs",
-              "RelativeDocumentMoniker": "Project11\\Program.cs",
-              "ToolTip": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project11\\Program.cs",
-              "RelativeToolTip": "Project11\\Program.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDsAAAArAAAAAAAAAA==",
+              "Title": "Utils.cs",
+              "DocumentMoniker": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project12\\Utils.cs",
+              "RelativeDocumentMoniker": "Project12\\Utils.cs",
+              "ToolTip": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project12\\Utils.cs",
+              "RelativeToolTip": "Project12\\Utils.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T07:09:55.75Z",
+              "WhenOpened": "2025-10-17T03:25:54.975Z",
               "EditorCaption": ""
             }
           ]
