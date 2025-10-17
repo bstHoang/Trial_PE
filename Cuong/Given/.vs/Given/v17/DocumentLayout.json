@@ -1,26 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\School\\NET\\TCP_CLIENT_ONLY_GIVEN\\Cuong\\Given\\",
+  "WorkspaceRootPath": "D:\\DoAnFall25\\Code\\Trial_PE\\Cuong\\Given\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8FA74681-C00D-2B56-5B67-9C1ABA398DB8}|Project11\\Project11.csproj|c:\\users\\pc\\documents\\school\\net\\tcp_client_only_given\\cuong\\given\\project11\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FA74681-C00D-2B56-5B67-9C1ABA398DB8}|Project11\\Project11.csproj|solutionrelative:project11\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B3486CC-BDDA-C227-AAD9-EB73E96E1C81}|Project12\\Project12.csproj|c:\\users\\pc\\documents\\school\\net\\tcp_client_only_given\\cuong\\given\\project12\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2B3486CC-BDDA-C227-AAD9-EB73E96E1C81}|Project12\\Project12.csproj|solutionrelative:project12\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B3486CC-BDDA-C227-AAD9-EB73E96E1C81}|Project12\\Project12.csproj|c:\\users\\pc\\documents\\school\\net\\tcp_client_only_given\\cuong\\given\\project12\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2B3486CC-BDDA-C227-AAD9-EB73E96E1C81}|Project12\\Project12.csproj|d:\\doanfall25\\code\\trial_pe\\cuong\\given\\project12\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B3486CC-BDDA-C227-AAD9-EB73E96E1C81}|Project12\\Project12.csproj|solutionrelative:project12\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B3486CC-BDDA-C227-AAD9-EB73E96E1C81}|Project12\\Project12.csproj|c:\\users\\pc\\documents\\school\\net\\tcp_client_only_given\\cuong\\given\\project12\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B3486CC-BDDA-C227-AAD9-EB73E96E1C81}|Project12\\Project12.csproj|solutionrelative:project12\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8FA74681-C00D-2B56-5B67-9C1ABA398DB8}|Project11\\Project11.csproj|d:\\doanfall25\\code\\trial_pe\\cuong\\given\\project11\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8FA74681-C00D-2B56-5B67-9C1ABA398DB8}|Project11\\Project11.csproj|solutionrelative:project11\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8FA74681-C00D-2B56-5B67-9C1ABA398DB8}|Project11\\Project11.csproj|c:\\users\\pc\\documents\\school\\net\\tcp_client_only_given\\cuong\\given\\project11\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8FA74681-C00D-2B56-5B67-9C1ABA398DB8}|Project11\\Project11.csproj|solutionrelative:project11\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{2B3486CC-BDDA-C227-AAD9-EB73E96E1C81}|Project12\\Project12.csproj|d:\\doanfall25\\code\\trial_pe\\cuong\\given\\project12\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2B3486CC-BDDA-C227-AAD9-EB73E96E1C81}|Project12\\Project12.csproj|solutionrelative:project12\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FA74681-C00D-2B56-5B67-9C1ABA398DB8}|Project11\\Project11.csproj|d:\\doanfall25\\code\\trial_pe\\cuong\\given\\project11\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FA74681-C00D-2B56-5B67-9C1ABA398DB8}|Project11\\Project11.csproj|solutionrelative:project11\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B3486CC-BDDA-C227-AAD9-EB73E96E1C81}|Project12\\Project12.csproj|d:\\doanfall25\\code\\trial_pe\\cuong\\given\\project12\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B3486CC-BDDA-C227-AAD9-EB73E96E1C81}|Project12\\Project12.csproj|solutionrelative:project12\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 209,
+          "SelectedChildIndex": 207,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,6 +43,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:132:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
@@ -175,10 +179,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:13:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
             },
             {
               "$type": "Bookmark",
@@ -522,10 +522,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{99a11807-c5db-4877-ad35-09b56a044012}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{131369f2-062d-44a2-8671-91ff31efb4f4}"
             },
             {
@@ -639,6 +635,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:26:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
             },
             {
               "$type": "Bookmark",
@@ -818,6 +818,10 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
@@ -854,41 +858,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Utils.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\School\\NET\\TCP_CLIENT_ONLY_GIVEN\\Cuong\\Given\\Project12\\Utils.cs",
+              "DocumentMoniker": "D:\\DoAnFall25\\Code\\Trial_PE\\Cuong\\Given\\Project12\\Utils.cs",
               "RelativeDocumentMoniker": "Project12\\Utils.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\School\\NET\\TCP_CLIENT_ONLY_GIVEN\\Cuong\\Given\\Project12\\Utils.cs",
+              "ToolTip": "D:\\DoAnFall25\\Code\\Trial_PE\\Cuong\\Given\\Project12\\Utils.cs",
               "RelativeToolTip": "Project12\\Utils.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T07:59:49.495Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "WhenOpened": "2025-10-16T07:59:49.495Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\School\\NET\\TCP_CLIENT_ONLY_GIVEN\\Cuong\\Given\\Project12\\Program.cs",
+              "DocumentMoniker": "D:\\DoAnFall25\\Code\\Trial_PE\\Cuong\\Given\\Project12\\Program.cs",
               "RelativeDocumentMoniker": "Project12\\Program.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\School\\NET\\TCP_CLIENT_ONLY_GIVEN\\Cuong\\Given\\Project12\\Program.cs",
+              "ToolTip": "D:\\DoAnFall25\\Code\\Trial_PE\\Cuong\\Given\\Project12\\Program.cs",
               "RelativeToolTip": "Project12\\Program.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAqwBYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABQAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-16T07:44:24.81Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\School\\NET\\TCP_CLIENT_ONLY_GIVEN\\Cuong\\Given\\Project12\\appsettings.json",
+              "DocumentMoniker": "D:\\DoAnFall25\\Code\\Trial_PE\\Cuong\\Given\\Project12\\appsettings.json",
               "RelativeDocumentMoniker": "Project12\\appsettings.json",
-              "ToolTip": "C:\\Users\\PC\\Documents\\School\\NET\\TCP_CLIENT_ONLY_GIVEN\\Cuong\\Given\\Project12\\appsettings.json",
+              "ToolTip": "D:\\DoAnFall25\\Code\\Trial_PE\\Cuong\\Given\\Project12\\appsettings.json",
               "RelativeToolTip": "Project12\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -897,24 +896,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\School\\NET\\TCP_CLIENT_ONLY_GIVEN\\Cuong\\Given\\Project11\\Program.cs",
+              "DocumentMoniker": "D:\\DoAnFall25\\Code\\Trial_PE\\Cuong\\Given\\Project11\\Program.cs",
               "RelativeDocumentMoniker": "Project11\\Program.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\School\\NET\\TCP_CLIENT_ONLY_GIVEN\\Cuong\\Given\\Project11\\Program.cs",
+              "ToolTip": "D:\\DoAnFall25\\Code\\Trial_PE\\Cuong\\Given\\Project11\\Program.cs",
               "RelativeToolTip": "Project11\\Program.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwCYAAABNAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAzwGsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-16T07:34:48.07Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\School\\NET\\TCP_CLIENT_ONLY_GIVEN\\Cuong\\Given\\Project11\\appsettings.json",
+              "DocumentMoniker": "D:\\DoAnFall25\\Code\\Trial_PE\\Cuong\\Given\\Project11\\appsettings.json",
               "RelativeDocumentMoniker": "Project11\\appsettings.json",
-              "ToolTip": "C:\\Users\\PC\\Documents\\School\\NET\\TCP_CLIENT_ONLY_GIVEN\\Cuong\\Given\\Project11\\appsettings.json",
+              "ToolTip": "D:\\DoAnFall25\\Code\\Trial_PE\\Cuong\\Given\\Project11\\appsettings.json",
               "RelativeToolTip": "Project11\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
