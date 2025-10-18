@@ -1,0 +1,4 @@
+1. Connect to Server(done)
+2. Validate Input(done)
+3. Error to connect(done)
+4. Xử lý data(no)
