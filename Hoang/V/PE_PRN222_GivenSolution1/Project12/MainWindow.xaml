@@ -6,7 +6,23 @@
         xmlns:local="clr-namespace:Project12"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <DockPanel>
+        <!-- Thông báo trạng thái -->
+        <TextBlock x:Name="StatusText"
+                   DockPanel.Dock="Top"
+                   Foreground="Red"
+                   Margin="5"
+                   Text="Connecting to server..." />
 
-    </Grid>
+        <!-- Nút reconnect -->
+        <Button Content="Reconnect"
+                DockPanel.Dock="Top"
+                Margin="5"
+                Click="Reconnect_Click" />
+
+        <!-- Bảng dữ liệu sách -->
+        <DataGrid x:Name="BooksGrid"
+                  AutoGenerateColumns="True"
+                  Margin="5" />
+    </DockPanel>
 </Window>
