@@ -35,19 +35,18 @@ class Program
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
             .Build();
 
-        baseUrl = config["BaseUrl"] ;
-        Console.WriteLine($"Base URL: {baseUrl}");
+        string ipAddress = config["IpAddress"];
+        string port = config["Port"];
+        baseUrl = $"{ipAddress}{port}/";
 
         bool running = true;
 
         while (running)
         {
-            Console.WriteLine("\n====== Library Client ======");
+            Console.WriteLine("\n====== Book Store ======");
             Console.WriteLine("1. List Books");
-            Console.WriteLine("2. Create Book");
-            Console.WriteLine("3. Update Book");
-            Console.WriteLine("4. Delete Book");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("2. Delete Book");
+            Console.WriteLine("3. Exit");
             Console.Write("Choose an option: ");
 
             var choice = Console.ReadLine();
