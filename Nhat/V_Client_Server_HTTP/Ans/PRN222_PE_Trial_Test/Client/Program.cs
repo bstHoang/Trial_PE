@@ -17,7 +17,8 @@ namespace Client
 
             HttpClient client = new HttpClient();
 
-            string? serverRoot = configuration["BaseServerURL"];
+            string? serverRoot = $"{configuration["IpAddress"]}:{configuration["Port"]}/";
+            ;
 
             if (serverRoot == null)
             {
@@ -50,7 +51,7 @@ namespace Client
         {
             try
             {
-                var response = await client.GetAsync($"{serverRoot}books");
+                var response = await client.GetAsync($"{serverRoot}list");
 
                 if (response.IsSuccessStatusCode)
                 {

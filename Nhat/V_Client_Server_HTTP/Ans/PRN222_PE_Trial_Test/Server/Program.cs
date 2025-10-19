@@ -14,7 +14,7 @@ namespace Server
         {
             IConfigurationRoot configuration = LoadAppSetting();
 
-            string? serverRoot = configuration["ServerUrl"];
+            string? serverRoot = $"{configuration["IPAddress"]}:{configuration["Port"]}/";
 
             if (serverRoot == null)
             {
@@ -71,14 +71,17 @@ namespace Server
                     }
                     else
                     {
-                        Book? book = await libraryContext.Books.FindAsync(id);
+                        Book? book = libraryContext.Books
+                                    .Include(b => b.Authors)
+                                    .Include(b => b.Genre)
+                                    .FirstOrDefault(b => b.BookId == id);
                         if (book == null)
                         {
                             await Helper.WriteJsonResponse(response, "Book does not exist!", MediaTypeNames.Application.Json, HttpStatusCode.NotFound);
                         }
                         else
                         {
-                            libraryContext.Remove(book);
+                            libraryContext.Books.Remove(book);
                             await libraryContext.SaveChangesAsync();
                             await Helper.WriteJsonResponse(response, "Deleted.", MediaTypeNames.Application.Json, HttpStatusCode.OK);
                         }
