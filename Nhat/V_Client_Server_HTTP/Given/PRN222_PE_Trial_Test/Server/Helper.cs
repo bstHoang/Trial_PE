@@ -34,8 +34,5 @@ namespace Server
             response.StatusCode = (int)statusCode;
             await response.OutputStream.WriteAsync(buffer, 0, buffer.Length);
         }
-
-
-        
     }
 }

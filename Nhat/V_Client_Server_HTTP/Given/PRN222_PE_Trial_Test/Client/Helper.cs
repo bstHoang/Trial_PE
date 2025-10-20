@@ -6,76 +6,99 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Server
+internal class Helper
 {
-    internal class Helper
-    {
-        private Helper() { }
+    private Helper() { }
 
-        /// <summary>
-        /// Student must use this method to format the object before printing it to the console
-        /// </summary>
-        /// <returns>string contain all item attribute</returns>
-        public static string Stringify<T>(T item)
+    /// <summary>
+    /// Student must use this method to format the object before printing it to the console
+    /// </summary>
+    /// <returns>string contain all item attribute</returns>
+    public static string Stringify<T>(T item)
+    {
+        return Stringify(item!, new HashSet<object>());
+    }
+
+    private static string Stringify(object item, HashSet<object> visited, int indent = 0)
+    {
+        if (item == null)
+            return "null";
+
+        var type = item.GetType();
+
+        bool isSimple =
+            type.IsPrimitive ||
+            item is string ||
+            item is decimal ||
+            item is DateTime ||
+            item is Guid;
+
+        if (!isSimple)
         {
-            return Stringify(item!, new HashSet<object>());
+            if (visited.Contains(item))
+                return "<circular reference>";
+            visited.Add(item);
         }
 
-        private static string Stringify(object item, HashSet<object> visited)
+        if (type.IsPrimitive || item is string || item is decimal || item is DateTime || item is Guid)
         {
-            if (item == null || visited.Contains(item)) return string.Empty;
-            visited.Add(item);
+            if (item is string)
+                return $"{item}";
+            if (item is DateTime dt)
+                return $"{dt.ToString("MM/dd/yyyy hh:mm:ss tt")}";
+            return $"{item}";
+        }
 
-            var type = item.GetType();
-
-            if (typeof(System.Collections.IDictionary).IsAssignableFrom(type))
-            {
-                var dict = (System.Collections.IDictionary)item;
-                var builderDict = new StringBuilder();
-                foreach (var key in dict.Keys)
-                {
-                    var value = dict[key];
-                    builderDict.Append($"[{Stringify(key, visited)}] = {Stringify(value, visited)} | ");
-                }
-                return builderDict.ToString();
-            }
-
-            if (typeof(System.Collections.IEnumerable).IsAssignableFrom(type) && type != typeof(string))
-            {
-                var listBuilder = new StringBuilder();
-                foreach (var element in (System.Collections.IEnumerable)item)
-                {
-                    listBuilder.Append(Stringify(element, visited));
-                }
-                return listBuilder.ToString();
-            }
-
+        if (typeof(System.Collections.IDictionary).IsAssignableFrom(type))
+        {
+            var dict = (System.Collections.IDictionary)item;
             var builder = new StringBuilder();
-            foreach (var prop in type.GetProperties())
-            {
-                var value = prop.GetValue(item);
-                if (value == null)
-                {
-                    builder.Append($"{prop.Name}: null | ");
-                    continue;
-                }
 
-                if (IsCustomObject(prop.PropertyType))
-                {
-                    builder.Append($"\n{prop.Name}:\n\t {Stringify(value, visited)} ");
-                }
-                else
-                {
-                    builder.Append($"{prop.Name}: {value} | ");
-                }
+            foreach (var key in dict.Keys)
+            {
+                builder.Append($"{key}: {Stringify(dict[key], visited, indent + 2)}");
             }
+
             return builder.ToString();
         }
 
-        private static bool IsCustomObject(Type type)
+        if (typeof(System.Collections.IEnumerable).IsAssignableFrom(type) && type != typeof(string))
         {
-            type = Nullable.GetUnderlyingType(type) ?? type;
-            return !(type.IsPrimitive || type.IsEnum || type == typeof(string) || type.IsValueType);
+            var builder = new StringBuilder();
+
+            foreach (var element in (System.Collections.IEnumerable)item)
+            {
+                builder.Append(Stringify(element, visited, indent + 2));
+            }
+
+            return builder.ToString();
         }
+
+        var props = type.GetProperties();
+        var indentStr = new string(' ', indent);
+        var innerIndentStr = new string(' ', indent + 2);
+
+        var sb = new StringBuilder();
+
+        bool firstProp = true;
+        foreach (var prop in props)
+        {
+            if (!firstProp) sb.Append(", ");
+            sb.AppendLine();
+            sb.Append(innerIndentStr);
+            sb.Append($"{prop.Name}: ");
+
+            var value = prop.GetValue(item);
+            sb.Append(Stringify(value, visited, indent + 2));
+
+            firstProp = false;
+        }
+
+        if (props.Length > 0)
+        {
+            sb.Append(indentStr);
+        }
+
+        return sb.ToString();
     }
 }

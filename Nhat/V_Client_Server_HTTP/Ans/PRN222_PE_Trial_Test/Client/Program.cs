@@ -91,7 +91,7 @@ namespace Client
             while (true)
             {
                 Menu.DeleteMenu();
-                if (!int.TryParse(Console.ReadLine(), out id))
+                if (int.TryParse(Console.ReadLine(), out id))
                 {
                     Console.WriteLine("Invalid ID.");
                 }

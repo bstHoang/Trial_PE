@@ -50,7 +50,7 @@ namespace Server
                         })
                         .ToListAsync();
 
-                    if (listBook == null)
+                    if (listBook == null) 
                     {
                         await Helper.WriteJsonResponse(response, new List<Book>(), MediaTypeNames.Application.Json, HttpStatusCode.OK);
                     }
