@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Casptone Project\\PE_Trial_Demo\\Trial_PE\\Cuong\\Given\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8FA74681-C00D-2B56-5B67-9C1ABA398DB8}|Project11\\Project11.csproj|d:\\casptone project\\pe_trial_demo\\trial_pe\\cuong\\given\\project11\\models\\moviestoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FA74681-C00D-2B56-5B67-9C1ABA398DB8}|Project11\\Project11.csproj|solutionrelative:project11\\models\\moviestoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 207,
           "Children": [
             {
               "$type": "Bookmark",
@@ -838,6 +843,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MovieStoreDbContext.cs",
+              "DocumentMoniker": "D:\\Casptone Project\\PE_Trial_Demo\\Trial_PE\\Cuong\\Given\\Project11\\Models\\MovieStoreDbContext.cs",
+              "RelativeDocumentMoniker": "Project11\\Models\\MovieStoreDbContext.cs",
+              "ToolTip": "D:\\Casptone Project\\PE_Trial_Demo\\Trial_PE\\Cuong\\Given\\Project11\\Models\\MovieStoreDbContext.cs",
+              "RelativeToolTip": "Project11\\Models\\MovieStoreDbContext.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T04:01:59.381Z",
+              "EditorCaption": ""
             }
           ]
         },

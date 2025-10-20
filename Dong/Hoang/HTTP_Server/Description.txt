@@ -1,0 +1,5 @@
+1. Validate Input(done)
+2. Connect(done)
+3. Get Request(done)
+4. Forward data(no)
+5. Showdata(No)
