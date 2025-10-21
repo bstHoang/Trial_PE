@@ -1,104 +1,101 @@
-﻿using System.Reflection;
+﻿using Project12.Models;
+using System.Reflection;
 using System.Text;
-using Project12.Models;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Project12
 {
     public class Utils
     {
-        // We are modifying this method to fix the duplicate output.
-        public static void FormatObject<T>(T item)
-        {
-            // If the item is null, we do nothing.
-            if (item == null)
-            {
-                Console.WriteLine(string.Empty);
-                return; // Exit the method early.
-            }
-
-            // Check if the item is a Movie object.
-            if (item is Movie movie)
-            {
-                // This block prints the success message and the formatted movie details,
-                // just like in your example image.
-                Console.WriteLine(
-                    $"Successfully borrowed '{movie.Title}'. Remaining copies: {movie.AvailableCopies}");
-                Console.WriteLine($"Title: {movie.Title}, ReleaseYear: {movie.ReleaseYear}, Genre: {movie.Genre}, AvailableCopies: {movie.AvailableCopies}, Director: {movie.Director?.FirstName} {movie.Director?.LastName}");
-
-                // We add a 'return' here to prevent any other code in this method from running.
-                // This is the key to solving the duplication issue.
-                return;
-            }
-
-            // If the object is not a Movie, you could add other formatting rules here
-            // or use the Stringify method for a generic output. For now, we'll leave it simple.
-            Console.WriteLine(Stringify(item));
+        public static string Stringify<T>(T item){
+            return Stringify(item, new HashSet<object>());
         }
 
-        // The Stringify methods remain unchanged.
-        public static string Stringify<T>(T item)
+        public static string Stringify(object item, HashSet<object> visited, int indent = 0)
         {
-            return Stringify(item!, new HashSet<object>());
-        }
-
-        private static string Stringify(object item, HashSet<object> visited)
-        {
-            if (item == null || visited.Contains(item)) return string.Empty;
+            if (item == null) return "null";
+            if (visited.Contains(item)) return "(circular reference)";
             visited.Add(item);
 
             var type = item.GetType();
+            string indentStr = new string(' ', indent * 2);
+            string nextIndent = new string(' ', (indent + 1) * 2);
 
-            // Handle Dictionary
+            // Primitive types
+            if (type.IsPrimitive || item is decimal || item is bool)
+                return item.ToString();
+            if (item is string str)
+                return str;
+
+            // Dictionary
             if (typeof(System.Collections.IDictionary).IsAssignableFrom(type))
             {
                 var dict = (System.Collections.IDictionary)item;
-                var builderDict = new StringBuilder();
+                var pairs = new List<string>();
+
                 foreach (var key in dict.Keys)
                 {
                     var value = dict[key];
-                    builderDict.Append($"[{Stringify(key, visited)}] = {Stringify(value, visited)} | ");
+                    var valueStr = Stringify(value, visited, indent + 1);
+                    if (IsComplex(value))
+                        pairs.Add($"\n{nextIndent}{key}: {valueStr}");
+                    else
+                        pairs.Add($"{key}: {valueStr}");
                 }
-                return builderDict.ToString();
+
+                return pairs.Count > 0
+                    ? string.Join(", ", pairs).TrimEnd(' ')
+                    : "{}";
             }
 
-            // Handle List, Set, etc.
+            // Collection
             if (typeof(System.Collections.IEnumerable).IsAssignableFrom(type) && type != typeof(string))
             {
-                var listBuilder = new StringBuilder();
+                var elements = new List<string>();
                 foreach (var element in (System.Collections.IEnumerable)item)
                 {
-                    listBuilder.Append(Stringify(element, visited));
+                    var elementStr = Stringify(element, visited, indent + 1);
+                    if (IsComplex(element))
+                        elements.Add($"\n{nextIndent} {elementStr}");
+                    else
+                        elements.Add($" {elementStr}");
                 }
-                return listBuilder.ToString();
+
+                return elements.Count > 0
+                    ? string.Join(", ", elements)
+                    : "[]";
             }
 
-            // Handle regular object
-            var builder = new StringBuilder();
-            foreach (var prop in type.GetProperties())
+            // Object
+            var props = type.GetProperties();
+            var propPairs = new List<string>();
+
+            foreach (var prop in props)
             {
                 var value = prop.GetValue(item);
-                if (value == null)
-                {
-                    builder.Append($"{prop.Name}: null | ");
-                    continue;
-                }
+                var valueStr = Stringify(value, visited, indent + 1);
 
-                if (IsCustomObject(prop.PropertyType))
-                {
-                    builder.Append($"\n{prop.Name}:\n\t {Stringify(value, visited)} ");
-                }
+                if (IsComplex(value))
+                    propPairs.Add($"\n{nextIndent}{prop.Name}: {valueStr}");
                 else
-                {
-                    builder.Append($"{prop.Name}: {value} | ");
-                }
+                    propPairs.Add($"{prop.Name}: {valueStr}");
             }
-            return builder.ToString();
+
+            // If object has inner complex type, put on newlines
+            bool hasInnerComplex = props.Any(p => IsComplex(p.GetValue(item)));
+
+            if (hasInnerComplex)
+                return string.Join(",", propPairs) + $"{indentStr}";
+            else
+                return string.Join(", ", propPairs);
         }
 
-        private static bool IsCustomObject(Type type)
+        private static bool IsComplex(object obj)
         {
-            type = Nullable.GetUnderlyingType(type) ?? type;
-            return !(type.IsPrimitive || type.IsEnum || type == typeof(string) || type.IsValueType);
+            if (obj == null) return false;
+            var t = obj.GetType();
+            return !(t.IsPrimitive || obj is string || obj is decimal || obj is bool);
         }
     }
 }
