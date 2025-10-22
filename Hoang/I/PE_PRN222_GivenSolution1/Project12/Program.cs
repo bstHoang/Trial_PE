@@ -58,7 +58,7 @@ class Program
                 {
                     foreach (var book in books)
                     {
-                        Console.WriteLine(Utils.FormatObject(book));
+                        Console.WriteLine(Utils.Stringify(book));
                     }
                 }
             }
