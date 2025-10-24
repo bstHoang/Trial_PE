@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Server;
 using System;
 using System.ComponentModel.Design;
 using System.Net;
@@ -18,7 +17,6 @@ namespace Client
             HttpClient client = new HttpClient();
 
             string? serverRoot = $"{configuration["IpAddress"]}:{configuration["Port"]}/";
-            ;
 
             if (serverRoot == null)
             {
@@ -64,10 +62,10 @@ namespace Client
                     Console.WriteLine("\n====== Book List ======");
                     if (books != null && books.Count > 0)
                     {
-                        foreach (var book in books)
-                        {
-                            Console.WriteLine(Helper.Stringify(book));
-                        }
+                        //foreach (var book in books)
+                        //{
+                            Console.WriteLine(Helper.Stringify(books));
+                        //}
                     }
                     else
                     {
@@ -91,7 +89,7 @@ namespace Client
             while (true)
             {
                 Menu.DeleteMenu();
-                if (int.TryParse(Console.ReadLine(), out id))
+                if (!int.TryParse(Console.ReadLine(), out id))
                 {
                     Console.WriteLine("Invalid ID.");
                 }
@@ -127,7 +125,6 @@ namespace Client
         private static IConfigurationRoot LoadAppSetting()
         {
             return new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
             .Build();
         }
