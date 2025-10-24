@@ -93,7 +93,6 @@ class Program
                 Console.WriteLine("\n\u274C Error parsing server response (Invalid JSON format).\n");
             }
 
-            Console.WriteLine("\n" + new string('-', 40) + "\n");
         }
     }
 }

@@ -50,20 +50,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project11\\appsettings.json",
-              "RelativeDocumentMoniker": "Project11\\appsettings.json",
-              "ToolTip": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project11\\appsettings.json",
-              "RelativeToolTip": "Project11\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-20T05:50:49.798Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -138,18 +126,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BookDto.cs",
-              "DocumentMoniker": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project12\\Models\\BookDto.cs",
-              "RelativeDocumentMoniker": "Project12\\Models\\BookDto.cs",
-              "ToolTip": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project12\\Models\\BookDto.cs",
-              "RelativeToolTip": "Project12\\Models\\BookDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T05:42:11.168Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project12\\Program.cs",
@@ -163,6 +139,30 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project11\\appsettings.json",
+              "RelativeDocumentMoniker": "Project11\\appsettings.json",
+              "ToolTip": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project11\\appsettings.json",
+              "RelativeToolTip": "Project11\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-20T05:50:49.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BookDto.cs",
+              "DocumentMoniker": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project12\\Models\\BookDto.cs",
+              "RelativeDocumentMoniker": "Project12\\Models\\BookDto.cs",
+              "ToolTip": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project12\\Models\\BookDto.cs",
+              "RelativeToolTip": "Project12\\Models\\BookDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T05:42:11.168Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Utils.cs",
               "DocumentMoniker": "D:\\Capstone Project\\Trial_PE\\Hoang\\I\\PE_PRN222_GivenSolution1\\Project12\\Utils.cs",
@@ -171,8 +171,7 @@
               "RelativeToolTip": "Project12\\Utils.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAAAYwFMAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T05:40:29.313Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-20T05:40:29.313Z"
             }
           ]
         }
