@@ -52,18 +52,19 @@ while (true)
         string jsonResponse = Encoding.UTF8.GetString(buffer,0,byteReader);
         using var dataParse = JsonDocument.Parse(jsonResponse);
         string status = dataParse.RootElement.GetProperty("Status").GetString()!;
-        
-        //if(status == "Success")
-        //{
-        //    var movieJson = dataParse.RootElement.GetProperty("Movie").GetRawText()!;
-        //    var movie = JsonSerializer.Deserialize<Movie>(movieJson);
 
-        //    Utils.FormatObject(movie);
-        //} else if(status == "Error")
-        //{
-        //    string message = dataParse.RootElement.GetProperty("Message").GetString()!;
-        //    Console.WriteLine(message);
-        //}
+        if (status == "Success")
+        {
+            var movieJson = dataParse.RootElement.GetProperty("Movie").GetRawText()!;
+            var movie = JsonSerializer.Deserialize<Movie>(movieJson);
+
+            Utils.Stringify(movie);
+        }
+        else if (status == "Error")
+        {
+            string message = dataParse.RootElement.GetProperty("Message").GetString()!;
+            Console.WriteLine(message);
+        }
 
 
     }

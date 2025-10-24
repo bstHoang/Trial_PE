@@ -9,7 +9,7 @@ var config = new ConfigurationBuilder()
 string ipAddress = config["IpAddress"]!;
 string port = config["Port"]!;
 string baseUrl = $"{ipAddress}{port}/";
-
+Console.WriteLine($"Client started, connecting to Server at {baseUrl}");
 HttpClient client = new HttpClient
 {
     BaseAddress = new Uri(baseUrl)
@@ -17,7 +17,7 @@ HttpClient client = new HttpClient
 
 while (true)
 {
-    Console.Write("Please enter integer number (Genre ID): ");
+    Console.Write("Please enter integer number :");
     string? input = Console.ReadLine();
 
     if (string.IsNullOrWhiteSpace(input))
@@ -49,11 +49,11 @@ while (true)
                 Console.WriteLine(Utils.Stringify(book));
             } 
         }
-        Console.WriteLine("--------------------------------------\n");
 
     }
     catch (HttpRequestException ex)
     {
         Console.WriteLine("Server is not running. Please try again later.");
     }
+        Console.WriteLine("--------------------------------------\n");
 }
