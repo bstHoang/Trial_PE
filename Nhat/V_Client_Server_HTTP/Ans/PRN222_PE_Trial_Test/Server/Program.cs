@@ -101,7 +101,6 @@ namespace Server
         private static IConfigurationRoot LoadAppSetting()
         {
             return new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
             .Build();
         }

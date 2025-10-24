@@ -33,7 +33,6 @@ public partial class LibraryContext : DbContext
         if (!optionsBuilder.IsConfigured)
         {
             var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
