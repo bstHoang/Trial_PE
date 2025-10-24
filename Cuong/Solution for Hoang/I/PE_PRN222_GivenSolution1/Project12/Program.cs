@@ -16,7 +16,6 @@ class Program
         string ipAddress = config["IPAddress"];
         string port = config["Port"];
         string baseUrl = $"{ipAddress}{port}/";
-        Console.WriteLine($"Client started, connecting to Server at {baseUrl}");
 
         using var client = new HttpClient();
         while (true)
@@ -26,7 +25,7 @@ class Program
 
             if (string.IsNullOrWhiteSpace(input))
             {
-                Console.WriteLine("Exiting client application…");
+                Console.WriteLine("Exiting client application. . .");
                 break;
             }
 
@@ -59,7 +58,7 @@ class Program
                 {
                     foreach (var book in books)
                     {
-                        Console.WriteLine(Utils.FormatObject(book));
+                        Console.WriteLine(Utils.Stringify(book));
                     }
                 }
             }

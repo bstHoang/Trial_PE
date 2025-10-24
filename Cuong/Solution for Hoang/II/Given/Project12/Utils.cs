@@ -7,85 +7,92 @@ using System.Threading.Tasks;
 
 public class Utils
 {
-    // Format object method
-    public static string FormatObject<T>(T item)
-    {
-        if (item == null) return string.Empty;
-
-        PropertyInfo[] properties = typeof(T).GetProperties();
-        string result = "";
-
-        foreach (var prop in properties)
-        {
-            result += $"{prop.Name}: {prop.GetValue(item)} ";
-        }
-
-        return result.Trim();
-    }
-
     public static string Stringify<T>(T item)
     {
         return Stringify(item!, new HashSet<object>());
     }
 
-    private static string Stringify(object item, HashSet<object> visited)
+    private static string Stringify(object item, HashSet<object> visited, int indent = 0)
     {
-        if (item == null || visited.Contains(item)) return string.Empty;
-        visited.Add(item);
+        if (item == null)
+            return "null";
 
         var type = item.GetType();
 
-        //Handle Dict
+        bool isSimple =
+            type.IsPrimitive ||
+            item is string ||
+            item is decimal ||
+            item is DateTime ||
+            item is Guid;
+
+        if (!isSimple)
+        {
+            if (visited.Contains(item))
+                return "<circular reference>";
+            visited.Add(item);
+        }
+
+        if (type.IsPrimitive || item is string || item is decimal || item is DateTime || item is Guid)
+        {
+            if (item is string)
+                return $"{item}";
+            if (item is DateTime dt)
+                return $"{dt.ToString("MM/dd/yyyy hh:mm:ss tt")}";
+            return $"{item}";
+        }
+
         if (typeof(System.Collections.IDictionary).IsAssignableFrom(type))
         {
             var dict = (System.Collections.IDictionary)item;
-            var builderDict = new StringBuilder();
+            var builder = new StringBuilder();
+
             foreach (var key in dict.Keys)
             {
-                var value = dict[key];
-                builderDict.Append($"[{Stringify(key, visited)}] = {Stringify(value, visited)} | ");
+                builder.Append($"{key}: {Stringify(dict[key], visited, indent + 2)}");
             }
-            return builderDict.ToString();
+
+            return builder.ToString();
         }
 
-        //Handle List, Set, ...
         if (typeof(System.Collections.IEnumerable).IsAssignableFrom(type) && type != typeof(string))
         {
-            var listBuilder = new StringBuilder();
+            var builder = new StringBuilder();
+
             foreach (var element in (System.Collections.IEnumerable)item)
             {
-                listBuilder.Append(Stringify(element, visited));
+                builder.Append(Stringify(element, visited, indent + 2));
             }
-            return listBuilder.ToString();
+
+            return builder.ToString();
         }
 
-        //Handle regular object
-        var builder = new StringBuilder();
-        foreach (var prop in type.GetProperties())
+        var props = type.GetProperties();
+        var indentStr = new string(' ', indent);
+        var innerIndentStr = new string(' ', indent + 2);
+
+        var sb = new StringBuilder();
+
+        bool firstProp = true;
+        foreach (var prop in props)
         {
+            if (!firstProp) sb.Append(", ");
+            sb.AppendLine();
+            sb.Append(innerIndentStr);
+            sb.Append($"{prop.Name}: ");
+
             var value = prop.GetValue(item);
-            if (value == null)
-            {
-                builder.Append($"{prop.Name}: null | ");
-                continue;
-            }
+            sb.Append(Stringify(value, visited, indent + 2));
 
-            if (IsCustomObject(prop.PropertyType))
-            {
-                builder.Append($"\n{prop.Name}:\n\t {Stringify(value, visited)} ");
-            }
-            else
-            {
-                builder.Append($"{prop.Name}: {value} | ");
-            }
+            firstProp = false;
         }
-        return builder.ToString();
-    }
 
-    private static bool IsCustomObject(Type type)
-    {
-        type = Nullable.GetUnderlyingType(type) ?? type;
-        return !(type.IsPrimitive || type.IsEnum || type == typeof(string) || type.IsValueType);
+        if (props.Length > 0)
+        {
+            sb.Append(indentStr);
+        }
+
+        return sb.ToString();
     }
 }
 
