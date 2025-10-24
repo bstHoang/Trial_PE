@@ -54,27 +54,26 @@ while (true)
         }
 
         // Hiển thị thông tin user
-        Console.WriteLine($"Name: {user.FullName}");
-        Console.WriteLine($"Gender: {user.Gender}");
-        Console.WriteLine($"Address: {user.Address}");
+        //Console.WriteLine($"Name: {user.FullName}");
+        //Console.WriteLine($"Gender: {user.Gender}");
+        //Console.WriteLine($"Address: {user.Address}");
 
-        if (user.Orders != null && user.Orders.Any())
-        {
-            foreach (var order in user.Orders)
-            {
-                Console.WriteLine($"Order #{order.Id} - Date: {order.OrderDate:yyyy-MM-dd} - Status: {order.Status}");
-                foreach (var detail in order.Details ?? new List<OrderDetailDto>())
-                {
-                    Console.WriteLine($"   + {detail.ProductName} - Qty: {detail.Quantity}");
-                }
-            }
-        }
-        else
-        {
-            Console.WriteLine("\nNo orders found for this user.");
-        }
-
-        Console.WriteLine();
+        //if (user.Orders != null && user.Orders.Any())
+        //{
+        //    foreach (var order in user.Orders)
+        //    {
+        //        Console.WriteLine($"Order #{order.Id} - Date: {order.OrderDate:yyyy-MM-dd} - Status: {order.Status}");
+        //        foreach (var detail in order.Details ?? new List<OrderDetailDto>())
+        //        {
+        //            Console.WriteLine($"   + {detail.ProductName} - Qty: {detail.Quantity}");
+        //        }
+        //    }
+        //}
+        //else
+        //{
+        //    Console.WriteLine("\nNo orders found for this user.");
+        //}
+        Console.WriteLine(Helper.Stringify<UserDto>(user));
     }
     catch (Exception ex)
     {
